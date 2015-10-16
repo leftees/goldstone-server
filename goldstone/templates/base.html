@@ -44,18 +44,11 @@
     <body>
         <div id="wrap">
             <!-- Fixed navbar -->
-            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <div class="container">
+            <div class="navbar navbar-default navbar-fixed-top" >
+                <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle"
-                        data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        </button>
                         <a class="navbar-brand" href="#discover"><img src="{% static 'images/favicon-32.png' %}"/></a>
-                    </div>
+                    </div> <!-- navbar-header -->
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="#discover" id="goldstone-text"> <span class="i18n" data-i18n="goldstone">goldstone</span></a></li>
@@ -148,13 +141,36 @@
                 </a>
                 </h4>
             </ul>
-            <div class="global-range-refresh-container"></div>
+
+            <div class="global-range-refresh-container">
+            </div> <!-- global-range-refresh-container -->
+
+        </div> <!-- navbar-collapse -->
+    </div> <!-- container-fluid -->
+</div> <!-- navbar -->
+
+
+<!-- sidebar start -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Dashboard</a></li>
+                <li><a href="#">Alerts</a></li>
+                <li><a href="#">Metrics</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Topology</a></li>
+                <hr>
+                <li><a href="#">Chart Settings</a></li>
+                <hr>
+                <li><a href="#">Icons Only</a></li>
+            </ul>
         </div>
-        <!--/.nav-collapse -->
-    </div>
-</div>
-<!-- BEGIN PAGE CONTENT -->
-<div id="body-container" class="container">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+            <!-- BEGIN PAGE CONTENT -->
+<div id="body-container" class="container-fluid">
     <div class="row alert alert-danger alert-dismissable"
     hidden="true"></div>
     <div class="alert alert-warning alert-dismissable" hidden="true"></div>
@@ -163,13 +179,25 @@
     {% block content %}
     {% endblock %}
 </div>
-</div>
-<div id="footer">
-<div id="footer-container" class="container">
-    <p class="text-muted credit"><span class="i18n" data-i18n="Copyright">Copyright</span> 2014-2015 <a
-        href="http://solinea.com">Solinea, Inc.</a><a class="pull-right" href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank"><span class="i18n" data-i18n="License">License</span></a></p>
+<!-- body-container -->
+
+
+        </div>
     </div>
 </div>
+
+
+<!-- sidebar end -->
+
+</div> <!-- wrap -->
+
+<div id="footer">
+<div id="footer-container" class="container-fluid">
+    <p class="text-muted credit"><span class="i18n" data-i18n="Copyright">Copyright</span> 2014-2015 <a
+        href="http://solinea.com">Solinea, Inc.</a><a class="pull-right" href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank"><span class="i18n" data-i18n="License">License</span></a></p>
+    </div> <!-- footer-container -->
+</div> <!-- footer -->
+
 <!-- script tags are concatenated into the following files -->
 <!-- which are ordered so that dependencies come first -->
 <!-- goldstone global object {} is defined in base.js -->

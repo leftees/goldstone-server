@@ -14,14 +14,29 @@ html, body { background-color: #252525; height: 100%; color: #bbb; /* The html a
 /* Set the fixed height of the footer here */
 #footer { height: 60px; background-color: #ccc; }
 
+/* Sidebar */
+.sidebar { position: fixed; top: 51px; bottom: 0; left: 0; z-index: 1000; display: block; padding: 20px; overflow-x: hidden; overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */ background-color: #f5f5f5; /* border-right: 1px solid #eee; */ }
+
+/* Sidebar navigation */
+.nav-sidebar { margin-right: -21px; /* 20px padding + 1px border */ margin-bottom: 20px; margin-left: -20px; }
+
+.nav-sidebar > li > a { padding-right: 20px; padding-left: 20px; }
+
+.nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus { color: #fff; background-color: #428bca; }
+
+/* Main content */
+.main { padding: 20px; padding-right: 40px; padding-left: 0; }
+
+.main .page-header { margin-top: 0; }
+
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
-#wrap > .container { padding: 60px 15px 0; }
+#wrap > .container-fluid { padding: 60px 15px 0; }
 
-.container .credit { margin: 20px 0; }
+.container-fluid .credit { margin: 20px 0; }
 
-#footer > .container { padding-left: 15px; padding-right: 15px; }
+#footer > .container-fluid { z-index: 1001; padding-left: 145px; padding-right: 15px; }
 
 #global-lookback-range, #global-refresh-range { margin-top: 5px; }
 
