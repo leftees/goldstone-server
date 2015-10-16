@@ -704,11 +704,7 @@ msgstr ""
 #: loginPageView.js
 
 #: loginPageView.js
-msgid "Please Sign In"
-msgstr ""
-
-#: loginPageView.js
-msgid "Forgot Username or Password?"
+msgid "reset password"
 msgstr ""
 
 #: loginPageView.js
@@ -718,22 +714,12 @@ msgstr ""
 
 #: loginPageView.js
 msgctxt "loginpage"
-msgid "Enter Username"
-msgstr ""
-
-#: loginPageView.js
-msgctxt "loginpage"
 msgid "Password"
 msgstr ""
 
 #: loginPageView.js
 msgctxt "loginpage"
-msgid "Enter Password"
-msgstr ""
-
-#: loginPageView.js
-msgctxt "loginpage"
-msgid "Sign in"
+msgid "SIGN IN"
 msgstr ""
 
 #: loginPageView.js

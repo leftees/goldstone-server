@@ -40,7 +40,7 @@ html, body { height: 100%; /* The html and body elements cannot have any padding
 
 #global-lookback-range, #global-refresh-range { margin-top: 5px; }
 
-#goldstone-text { font-family: 'Homenaje', sans-serif; font-size: x-large; }
+#goldstone-text { font-family: 'Homenaje', sans-serif; }
 
 code { font-size: 80%; }
 

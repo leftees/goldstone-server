@@ -40,7 +40,7 @@ html, body { background-color: #252525; height: 100%; color: #bbb; /* The html a
 
 #global-lookback-range, #global-refresh-range { margin-top: 5px; }
 
-#goldstone-text { font-family: 'Homenaje', sans-serif; font-size: x-large; }
+#goldstone-text { font-family: 'Homenaje', sans-serif; }
 
 code { font-size: 80%; }
 
