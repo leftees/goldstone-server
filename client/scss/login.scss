@@ -1,0 +1,23 @@
+$dark_background: rgb(37, 37, 37);
+$dark_chart_background: rgb(25, 25, 25);
+$dark_footer: #ccc;
+$dark_panel_header: #bbb;
+$dark_panel_text: #bbb;
+$dark_text_on_light: #222;
+$dark_tip: rgba(200,200,200, 0.8);
+$dark_chart_text: #bbb;
+$dark_datatable_text: #eee;
+
+.login-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  max-width: 50%;
+}
+

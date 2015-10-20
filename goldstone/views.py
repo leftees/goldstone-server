@@ -144,3 +144,11 @@ class RouterView(TemplateView):
             context[I18N_VARIABLE] = "file not found"
 
         return context
+
+
+class LoginView(TemplateView):
+    """Return a template page for the new login ux.
+
+    """
+
+    template_name = 'login.html'

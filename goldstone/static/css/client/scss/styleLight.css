@@ -6,6 +6,10 @@ it will run a scss -> css routine that will reference both the dark and light
 files, and output two different css files that are switchable via the
 Goldstone user settings interface.
 */
+.login-container { height: 100%; padding: 0; margin: 0; display: flex; align-items: center; justify-content: center; }
+
+.login-box { max-width: 50%; }
+
 html, body { height: 100%; /* The html and body elements cannot have any padding or margin. */ }
 
 /* Wrapper for page content to push down footer */

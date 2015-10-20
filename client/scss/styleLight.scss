@@ -24,6 +24,7 @@ Goldstone user settings interface.
 
 $theme: light;
 
+@import "login";
 @import "main";
 @import "bootstrap-submenu-shim";
 @import "bootstrap_dark_override";
