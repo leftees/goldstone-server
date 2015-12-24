@@ -3433,6 +3433,46 @@ var LogAnalysisCollection = Backbone.Collection.extend({
 
 // define collection and link to model
 
+/*
+instantiated in logSearchPageView.js as:
+
+    this.logAnalysisCollection = new LogAnalysisCollection({});
+
+    ** and the view as:
+
+    this.logAnalysisView = new LogAnalysisView({
+        collection: this.logAnalysisCollection,
+        width: $('.log-analysis-container').width(),
+        height: 300,
+        el: '.log-analysis-container',
+        featureSet: 'logEvents',
+        chartTitle: 'Log Analysis',
+        urlRoot: "/logging/summarize?",
+
+    });
+
+*/
+
+var LogBrowserCollection = GoldstoneBaseCollection.extend({});
+;
+/**
+ * Copyright 2015 Solinea, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// define collection and link to model
+
 var model = GoldstoneBaseModel.extend({});
 
 var MetricViewCollection = GoldstoneBaseCollection.extend({
@@ -8541,7 +8581,7 @@ var LogBrowserViz = GoldstoneBaseView.extend({
 
             $(this.el).find('#spinner').show();
             this.constructUrl();
-            this.collection.fetchWithRemoval();
+            this.collection.fetchWithReset();
 
         });
 
@@ -8551,7 +8591,7 @@ var LogBrowserViz = GoldstoneBaseView.extend({
             ns.start = params[0];
             ns.end = params[1];
             this.constructUrl();
-            this.collection.fetchWithRemoval();
+            this.collection.fetchWithReset();
         });
     },
 
@@ -8639,7 +8679,7 @@ var LogBrowserViz = GoldstoneBaseView.extend({
         this.startEndToGlobalLookback();
         // this.triggerSearchTable();
         this.constructUrl();
-        this.collection.fetchWithRemoval();
+        this.collection.fetchWithReset();
 
     },
 
@@ -8709,7 +8749,7 @@ var LogBrowserViz = GoldstoneBaseView.extend({
 
         this.constructUrl();
 
-        this.collection.fetchWithRemoval();
+        this.collection.fetchWithReset();
         return null;
     },
 
@@ -9146,7 +9186,7 @@ var LogBrowserViz = GoldstoneBaseView.extend({
         // eliminates the immediate re-rendering of search table
         // upon initial chart instantiation
         // this.refreshSearchTableAfterOnce();
-        
+
         this.redraw();
 
     },
@@ -9558,7 +9598,9 @@ var LogSearchPageView = GoldstoneBasePageView.extend({
 
         //-----------------------------------------------
         // refactored views to modularize log viewer view
-        this.logBrowserVizCollection = new LogAnalysisCollection({});
+        this.logBrowserVizCollection = new LogBrowserCollection({
+            urlBase: '/logging/summarize/'
+        });
 
         this.logBrowserViz = new LogBrowserViz ({
             chartTitle: goldstone.contextTranslate('Logs vs Time', 'logbrowserpage'),
@@ -9620,7 +9662,7 @@ var LogSearchPageView = GoldstoneBasePageView.extend({
         this.viewsToStopListening = [this.logAnalysisCollection, this.logAnalysisView];
 
         this.viewsToStopListening.push(this.logBrowserVizCollection, this.logBrowserViz, this.logBrowserTableCollection, this.logBrowserTable);
-        
+
     },
 
     template: _.template('' +
